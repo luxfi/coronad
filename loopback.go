@@ -5,6 +5,7 @@ package coronad
 
 import (
 	"fmt"
+	"maps"
 	"sync"
 
 	"github.com/luxfi/corona/threshold"
@@ -116,9 +117,7 @@ func (g *gather[T]) submit(id int, v T, abortErr func() error) (map[int]T, error
 	}
 
 	out := make(map[int]T, len(g.items))
-	for k, val := range g.items {
-		out[k] = val
-	}
+	maps.Copy(out, g.items)
 	return out, nil
 }
 

@@ -85,11 +85,7 @@ func (s *SigningSession) Run(tr Transport) (*threshold.Signature, error) {
 	}
 
 	for _, idx := range s.participants {
-		idx := idx
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-
+		wg.Go(func() {
 			member, err := s.era.Member(idx)
 			if err != nil {
 				fail(err)
@@ -133,7 +129,7 @@ func (s *SigningSession) Run(tr Transport) (*threshold.Signature, error) {
 				sig = out
 				mu.Unlock()
 			}
-		}()
+		})
 	}
 	wg.Wait()
 

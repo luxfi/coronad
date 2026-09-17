@@ -1,6 +1,6 @@
 module github.com/luxfi/coronad
 
-go 1.26.4
+go 1.27.1
 
 require (
 	github.com/luxfi/corona v0.10.4
@@ -10,8 +10,6 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.11.1
 )
-
-require github.com/luxfi/dkg v0.3.5 // indirect
 
 require (
 	github.com/ALTree/bigfloat v0.2.0 // indirect
@@ -32,6 +30,7 @@ require (
 	github.com/luxfi/constants v1.6.2 // indirect
 	github.com/luxfi/container v0.2.2 // indirect
 	github.com/luxfi/crypto v1.20.2 // indirect
+	github.com/luxfi/dkg v0.3.5 // indirect
 	github.com/luxfi/geth v1.20.2 // indirect
 	github.com/luxfi/log v1.4.3 // indirect
 	github.com/luxfi/math v1.5.1 // indirect
